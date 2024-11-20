@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  webapp:
+  - apiVersion: v2
+    created: "2024-11-20T13:55:08.428725969Z"
+    description: A Helm chart for Kubernetes
+    digest: 725df9cfa97161b297c8f35c1445ff2505d4d03b0d81de35077863306f6dbf54
+    name: webapp
+    type: application
+    urls:
+    - https://github.com/zdotstar/helm-charts/releases/download/webapp-1.0.0/webapp-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-11-20T13:55:08.428732902Z"
