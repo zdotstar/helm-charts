@@ -50,9 +50,18 @@ spec:
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          {{- if .Values.persistence.enabled }}
+          - name: {{ .Values.persistence.name }}
+            mountPath: {{ .Values.persistence.mountPath }}
+          {{- end }}
       {{- with .Values.volumes }}
       volumes:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.persistence.enabled }}
+      - name: {{ .Values.persistence.name }}
+        persistentVolumeClaim:
+          claimName: {{ .Values.persistence.existingClaim | default (include "webapp.fullname" .) }}
       {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:

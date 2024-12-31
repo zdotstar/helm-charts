@@ -121,3 +121,13 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+
+# persistence:
+#   enabled: true
+#   name: data
+#   mountPath: /app/data
+#   accessMode: ReadWriteOnce
+#   size: 1Gi
+#   storageClass: standard
+#   # existingClaim: my-existing-pvc
