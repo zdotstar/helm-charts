@@ -49,7 +49,7 @@ spec:
           {{- if or .Values.volumeMounts .Values.persistence.enabled }}
           volumeMounts:
             {{- with .Values.volumeMounts }}
-              {{- toYaml . | nindent 6 }}
+              {{- toYaml . | nindent 12 }}
             {{- end }}
             {{- if .Values.persistence.enabled }}
             - name: {{ .Values.persistence.name }}
@@ -59,7 +59,7 @@ spec:
       {{- if or .Values.volumes .Values.persistence.enabled }}
       volumes:
         {{- with .Values.volumes }}
-          {{- toYaml . | nindent 2 }}
+          {{- toYaml . | nindent 8 }}
         {{- end }}
         {{- if .Values.persistence.enabled }}
         - name: {{ .Values.persistence.name }}
